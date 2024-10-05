@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template, request
 from flask_cors import CORS
 
 app = Flask(__name__)
@@ -12,7 +12,7 @@ def home():
 def about():
     about_info = {
         "title": "Never Broke Again",
-        "description": "Our project promotes financial inclusion by addressing a critical challenge international students face in the U.S.: navigating the student loan process.",
+        "description": "Our project promotes financial inclusion by addressing a critical challenge students face in the U.S.",
         "goals": [
             "Estimate the loan amount they need.",
             "Manage their repayment plans effectively."

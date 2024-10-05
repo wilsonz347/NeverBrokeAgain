@@ -1,72 +1,91 @@
-/* Aesthetic and Clean Styles */
-/* Professional and Modern Styles */
+/* Base styles */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f7f9fc; /* Light background for a soft appearance */
-    color: #333;
-    line-height: 1.6; /* Improves readability */
+    background: linear-gradient(135deg, #1f1f1f, #3a3a3a, #00172d, #004d99);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    color: #fff;
+    text-align: center;  /* Centering text globally */
 }
 
-h1, h2, h3, h4, h5, h6 {
-    color: #2c3e50; /* Dark color for headings for contrast */
-    text-align: center;
-    margin: 1.5rem 0 1rem; /* Adjusted margins for better spacing */
-    font-weight: 600; /* Slightly bolder for emphasis */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+h1, h2, h3 {
+    color: #00ace6;
 }
 
 h1 {
-    font-size: 2.5rem; /* Increased size for the main title */
+    margin-top: 20px;
 }
 
-h2 {
-    font-size: 2rem; /* Subheading size */
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: center;  /* Centering text */
+    margin: 0 0 15px 0;
 }
 
-h3 {
-    font-size: 1.5rem; /* Adjusted for hierarchy */
+.indented {
+    text-indent: 2em;
 }
 
-a {
-    color: #3498db; /* Standard link color */
-    text-decoration: none;
-    transition: color 0.2s ease, text-shadow 0.2s ease; /* Added transition for text-shadow */
-}
-
-a:hover {
-    color: #2980b9; /* Darker color on hover */
-    text-shadow: 0 0 5px rgba(41, 128, 185, 0.5); /* Subtle glow effect on hover */
-}
-
+/* Container */
 .container {
-    max-width: 800px; /* Max width for larger screens */
-    margin: 2rem auto; /* Centering with top/bottom margin */
-    padding: 2rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* More pronounced shadow for depth */
-    background-color: #ffffff;
-    border-radius: 12px; /* Rounded corners for a softer look */
-    border: 1px solid #eaecef; /* Light border for definition */
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7); /* More transparent background */
+    border-radius: 10px;
+    text-align: center;  /* Centering text within the container */
 }
 
-.button {
-    display: inline-block; /* Inline block for flexibility */
-    padding: 12px 24px; /* Larger padding for a more substantial button */
-    font-size: 1rem; /* Consistent font size */
-    color: #fff; /* White text */
-    background: #3498db; /* Updated to a vibrant blue */
-    border: none; /* Remove default border */
-    border-radius: 4px; /* Rounded corners */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for elevation */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background 0.3s ease, transform 0.2s ease; /* Smooth transition for hover effects */
+/* Centering bullet points */
+ul {
+    display: inline-block;
+    text-align: left;  /* Aligns list items within the ul */
+    padding-left: 0;
+    list-style: none;  /* Removes default bullet points */
 }
 
-.button:hover {
-    background: #2980b9; /* Darker blue on hover */
-    transform: translateY(-2px); /* Lift effect on hover */
+li {
+    position: relative;
+    padding-left: 20px;  /* Space for custom bullet */
+    margin-bottom: 10px;
+    text-align: left;
 }
 
-.button:active {
-    transform: translateY(0); /* Reset on click */
+li::before {
+    content: '•';
+    position: absolute;
+    left: -20px;  /* Adjust to center the bullet with the text */
+    color: #00ace6;  /* Bullet color */
+    font-size: 1.5em;  /* Bullet size */
+}
+
+/* Finance Theme Specifics */
+.financial {
+    color: #00ace6;  /* Financial blue color */
+    border-bottom: 2px solid #00ace6;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    h1, h2, h3 {
+        font-size: 1.2rem;
+    }
+
+    p, ul {
+        font-size: 0.9rem;
+    }
 }
