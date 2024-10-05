@@ -9,11 +9,13 @@ const api = axios.create({
   },
 });
 
+// Fetch API example
 async function fetchAboutData() {
   try {
     const response = await api.get("/about");
-    if (response.status === 204) {
-      console.log("About page fetched successfully");
+    if (response.status === 200) {
+      const aboutContentElement = document.getElementById("about-content");
+      aboutContentElement.innerHTML = response.data;
     } else {
       console.error("Error fetching about page:", response.statusText);
     }
@@ -22,4 +24,5 @@ async function fetchAboutData() {
   }
 }
 
+// Call the fetchAboutData function
 fetchAboutData();
