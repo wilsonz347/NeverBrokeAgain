@@ -1,3 +1,4 @@
+/*
 import axios from "axios";
 
 const API_URL = "http://localhost:5000";
@@ -15,7 +16,7 @@ async function fetchAboutData() {
     const response = await api.get("/about");
     if (response.status === 200) {
       const aboutContentElement = document.getElementById("about-content");
-      aboutContentElement.innerHTML = response.data;
+      aboutContentElement.innerHTML =
     } else {
       console.error("Error fetching about page:", response.statusText);
     }
@@ -24,5 +25,7 @@ async function fetchAboutData() {
   }
 }
 
+
 // Call the fetchAboutData function
 fetchAboutData();
+*/
