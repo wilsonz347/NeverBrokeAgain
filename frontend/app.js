@@ -1,3 +1,4 @@
+/*
 document.getElementById('loan-form').addEventListener('submit', async function(event) {
   event.preventDefault();
 
@@ -29,8 +30,8 @@ document.getElementById('loan-form').addEventListener('submit', async function(e
       document.getElementById('result').innerHTML = 'Error: ' + error.message;
   }
 });
+*/
 
-/*
 async function fetchAboutData() {
   console.log("fetchAboutData function called");
   try {
@@ -63,6 +64,5 @@ async function fetchAboutData() {
     document.getElementById('about-content').innerText = 'Failed to load about information.';
   }
 }
-*/
 
 window.onload = fetchAboutData;
