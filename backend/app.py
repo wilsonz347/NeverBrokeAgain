@@ -3,11 +3,10 @@ from flask_cors import CORS
 import pandas as pd
 import joblib
 
-# Load the trained model
-model = joblib.load('trained_model.pkl')
-
 app = Flask(__name__)
 CORS(app)
+
+model = joblib.load('final_training_model.pkl')
 
 @app.route('/')
 def home():
