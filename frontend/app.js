@@ -4,6 +4,7 @@ document.getElementById('loan-form').addEventListener('submit', async function(e
   const formData = new FormData(this);
   const data = {
       loan_amount: formData.get('loan_amount'),
+     //Issue with loan_amount
       term: formData.get('term'),
       interest_rate: formData.get('interest_rate'),
       installment: formData.get('installment'),
