@@ -6,7 +6,7 @@ import joblib
 app = Flask(__name__)
 CORS(app)
 
-model = joblib.load('training_model.pkl')
+model = joblib.load('final_training_model.pkl')
 
 @app.route('/')
 def home():
