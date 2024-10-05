@@ -1,17 +1,20 @@
-from flask import Flask, jsonify, render_template, request
+from flask import Flask, jsonify
+#, render_template, request)
 from flask_cors import CORS
-import pandas as pd
-import joblib
+#import pandas as pd
+#import joblib
 
 app = Flask(__name__)
 CORS(app)
 
-model = joblib.load('final_training_model.pkl')
+#model = joblib.load('final_training_model.pkl')
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return ("Server is running...")
+    #return render_template('index.html')
 
+'''
 @app.route('/predict', methods=['POST'])
 def predict():
     # Get data from form
@@ -38,6 +41,7 @@ def predict():
         result = f"Based on the inputs, you'd need approximately {round(predicted_years)} years to clear the loan. Adjust your plan accordingly."
 
     return render_template('index.html', prediction_text=result)
+'''
 
 @app.route('/about', methods=['GET'])
 def about():
@@ -49,7 +53,6 @@ def about():
             "Manage their repayment plans effectively."
         ],
         "features": [
-            "loan_amount,term,interest_rate,installment,balance,expected number of years"
             "Checks if the loan can be repaid by that time.",
             "Empower students to make informed financial decisions that align with their specific needs."
         ],
