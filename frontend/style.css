@@ -35,8 +35,9 @@ a:hover {
 }
 
 .button {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 1rem;
-    color: #fff;
-    background
+    display: inline-block;        /* Makes the button behave like an inline element while allowing for block properties */
+    padding: 10px 20px;         /* Adds space inside the button, 10px vertical and 20px horizontal */
+    font-size: 1rem;            /* Sets the font size to 1 rem (root em), making it responsive */
+    color: #fff;                /* Sets the text color to white */
+    background: hsl(0, 0%, 80%); /* Sets the background color to a light gray (HSL color) */
+}
