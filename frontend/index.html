@@ -3,12 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Page</title>
+    <title>Loan Repayment Estimator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>About Us</h1>
-    <div id="about-content">loading...</div>
-    <script src="app.js"></script> <!-- Link to your JavaScript file -->
+    <h1>Loan Repayment Estimator</h1>
+
+    <div class="container">
+        <!-- Form for loan details -->
+        <form id="loan-form">
+            <label for="loan_amount">Loan Amount:</label>
+            <input type="number" id="loan_amount" name="loan_amount" step="0.01" required><br><br>
+
+            <label for="term">Term (months):</label>
+            <input type="number" id="term" name="term" required><br><br>
+
+            <label for="interest_rate">Interest Rate (%):</label>
+            <input type="number" id="interest_rate" name="interest_rate" step="0.01" required><br><br>
+
+            <label for="installment">Installment ($):</label>
+            <input type="number" id="installment" name="installment" step="0.01" required><br><br>
+
+            <label for="balance">Balance ($):</label>
+            <input type="number" id="balance" name="balance" step="0.01" required><br><br>
+
+            <label for="expected_years">Expected Years to Repay:</label>
+            <input type="number" id="expected_years" name="expected_years" required><br><br>
+
+            <button type="submit" class="button">Check Eligibility</button>
+        </form>
+
+        <!-- Placeholder for result -->
+        <p id="result"></p>
+    </div>
+
+    <script src="app.js"></script>
 </body>
 </html>
