@@ -18,10 +18,8 @@ def about():
             "Manage their repayment plans effectively."
         ],
         "features": [
-            "Calculate the optimal loan amount.",
-            "Create a clear, manageable repayment schedule.",
-            "Guide students through estimating their expenses, including tuition, living costs, and other variables.",
-            "Generate personalized loan repayment schedules.",
+            "loan_amount,term,interest_rate,installment,balance,expected number of years"
+            "Checks if the loan can be repaid by that time.",
             "Empower students to make informed financial decisions that align with their specific needs."
         ],
         "impact": "In the U.S. financial system, student loans play a crucial role in enabling access to education, but navigating different loan types, interest rates, and repayment options can be overwhelming, especially for international students. Our app bridges this gap by offering an easy-to-use tool that simplifies the complexities of student loans and helps students plan their finances with confidence, reducing the financial stress associated with higher education."
