@@ -1,43 +1,91 @@
-/* Aesthetic and Clean Styles */
+/* Base styles */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
-    color: #333;
-    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #1f1f1f, #3a3a3a, #00172d, #004d99);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    color: #fff;
+    text-align: center;  /* Centering text globally */
 }
 
-h1, h2, h3, h4, h5, h6 {
-    color: #2c3e50;
-    text-align: center;
-    margin-bottom: 1rem;
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
-a {
-    color: #3498db;
-    text-decoration: none;
-    transition: color 0.2s ease;
+h1, h2, h3 {
+    color: #00ace6;
 }
 
-a:hover {
-    color: #2980b9;
+h1 {
+    margin-top: 20px;
 }
 
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: center;  /* Centering text */
+    margin: 0 0 15px 0;
+}
+
+.indented {
+    text-indent: 2em;
+}
+
+/* Container */
 .container {
-    width: 80%;
-    margin: 0 auto;
-    padding: 2rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: #ffffff;
-    border-radius: 8px;
-    margin-top: 2rem;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7); /* More transparent background */
+    border-radius: 10px;
+    text-align: center;  /* Centering text within the container */
 }
 
-.button {
-    display: inline-block;        /* Makes the button behave like an inline element while allowing for block properties */
-    padding: 10px 20px;         /* Adds space inside the button, 10px vertical and 20px horizontal */
-    font-size: 1rem;            /* Sets the font size to 1 rem (root em), making it responsive */
-    color: #fff;                /* Sets the text color to white */
-    background: hsl(0, 0%, 80%); /* Sets the background color to a light gray (HSL color) */
+/* Centering bullet points */
+ul {
+    display: inline-block;
+    text-align: left;  /* Aligns list items within the ul */
+    padding-left: 0;
+    list-style: none;  /* Removes default bullet points */
+}
+
+li {
+    position: relative;
+    padding-left: 20px;  /* Space for custom bullet */
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+li::before {
+    content: '•';
+    position: absolute;
+    left: -20px;  /* Adjust to center the bullet with the text */
+    color: #00ace6;  /* Bullet color */
+    font-size: 1.5em;  /* Bullet size */
+}
+
+/* Finance Theme Specifics */
+.financial {
+    color: #00ace6;  /* Financial blue color */
+    border-bottom: 2px solid #00ace6;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    h1, h2, h3 {
+        font-size: 1.2rem;
+    }
+
+    p, ul {
+        font-size: 0.9rem;
+    }
 }
