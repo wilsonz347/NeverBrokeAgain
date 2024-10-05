@@ -1,12 +1,46 @@
 from flask import Flask, jsonify, render_template, request
 from flask_cors import CORS
+import pandas as pd
+import joblib
 
 app = Flask(__name__)
 CORS(app)
 
+# Load the trained model
+model = joblib.load('trained_model.pkl')
+
+app = Flask(__name__)
+
 @app.route('/')
 def home():
-    return "Server running..."
+    return render_template('index.html')
+
+@app.route('/predict', methods=['POST'])
+def predict():
+    # Get data from form
+    loan_amount = float(request.form['loan_amount'])
+    term = int(request.form['term'])
+    interest_rate = float(request.form['interest_rate'])
+    installment = float(request.form['installment'])
+    balance = float(request.form['balance'])
+    expected_years = int(request.form['expected_years'])
+
+    input_data = pd.DataFrame({
+        'loan_amount': [loan_amount],
+        'term': [term],
+        'interest_rate': [interest_rate],
+        'installment': [installment],
+        'balance': [balance]
+    })
+
+    predicted_years = model.predict(input_data)[0]
+
+    if expected_years >= round(predicted_years):
+        result = f"You can do it! You can clear the loan in {expected_years} years."
+    else:
+        result = f"Based on the inputs, you'd need approximately {round(predicted_years)} years to clear the loan. Adjust your plan accordingly."
+
+    return render_template('index.html', prediction_text=result)
 
 @app.route('/about', methods=['GET'])
 def about():
