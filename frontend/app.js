@@ -1,7 +1,7 @@
 async function fetchAboutData() {
   console.log("fetchAboutData function called");
   try {
-    const response = await fetch('http://localhost:5000/about');
+    const response = await fetch('http://localhost:4000/about');
     console.log('Response:', response);
     if (response.ok) {
       const aboutData = await response.json();
