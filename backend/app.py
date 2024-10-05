@@ -53,7 +53,6 @@ def about():
             "Manage their repayment plans effectively."
         ],
         "features": [
-            "loan_amount,term,interest_rate,installment,balance,expected number of years"
             "Checks if the loan can be repaid by that time.",
             "Empower students to make informed financial decisions that align with their specific needs."
         ],
