@@ -1,3 +1,5 @@
+# Never Broke Again
+
 **Overview**
 Never Broke Again is a project aimed at promoting financial inclusion for students in the U.S. by simplifying the complexities of student loans. Our application helps students make informed financial decisions that align with their needs, ultimately reducing the stress associated with financing their education.
 
